@@ -1,12 +1,4 @@
-//
-//  ViewController.swift
-//  infinity-scroll
-//
-//  Created by 薮木翔大 on 2022/11/29.
-//
-
 import UIKit
-
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource ,UIScrollViewDelegate{
     
     
@@ -15,7 +7,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tb.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         return tb
     }()
-    var isLoading = false
     
     var data = [String]()
     override func viewDidLoad() {
@@ -74,7 +65,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     DispatchQueue.main.async {
                         self?.tableView.tableFooterView = nil
                         self?.tableView.reloadData()
-                        self?.isLoading = false
                         
                     }
                     
